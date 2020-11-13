@@ -26,29 +26,29 @@
             <span>
               <img src="../../src/assets/3.png" />
             </span>
-            <span>显示所有</span>
+            <span @click="tab=0" :class="{one:tab==0}">显示所有</span>
           </p>
-          <p>
+          <p @click="tab=1" :class="{one:tab==1}">
             <span>
               <img src="../../src/assets/3.png" />
             </span>集团
           </p>
-          <p class="p">总经办</p>
-          <p class="p">人事部</p>
-          <p class="p">财务部</p>
-          <p>
+          <p class="p" @click="tab=2" :class="{one:tab==2}">总经办</p>
+          <p class="p" @click="tab=3" :class="{one:tab==3}">人事部</p>
+          <p class="p" @click="tab=4" :class="{one:tab==4}">财务部</p>
+          <p @click="tab=5" :class="{one:tab==5}">
             <span class="el-icon-plus"></span>科技公司
           </p>
-          <p>
+          <p @click="tab=6" :class="{one:tab==6}">
             <span class="el-icon-plus"></span>工程公司
           </p>
-          <p>
+          <p @click="tab=7" :class="{one:tab==7}">
             <span class="el-icon-plus"></span>现代事务所
           </p>
-          <p class="p">北京机构</p>
-          <p class="p">杭州机构</p>
-          <p class="p">上海机构</p>
-          <p class="p">深圳机构</p>
+          <p class="p" @click="tab=8" :class="{one:tab==8}">北京机构</p>
+          <p class="p" @click="tab=9" :class="{one:tab==9}">杭州机构</p>
+          <p class="p" @click="tab=10" :class="{one:tab==10}">上海机构</p>
+          <p class="p" @click="tab=11" :class="{one:tab==11}">深圳机构</p>
         </div>
         <div class="zuo-er">
           <p>（以上分类中包含了在职的、试用期和临时的员工）</p>
@@ -73,15 +73,15 @@
       </div>
       <div class="you">
         <el-table :data="tableData" border>
-          <el-table-column @click="chakan()" prop="date" label="姓名" width="180" ></el-table-column>
+          <el-table-column @click="chakan()" prop="date" label="姓名" width="180"></el-table-column>
           <el-table-column prop="name" label="性别" width="180"></el-table-column>
           <el-table-column prop="address" label="工号"></el-table-column>
           <el-table-column prop="con" label="从属于"></el-table-column>
           <el-table-column prop="jian" label="职务"></el-table-column>
           <el-table-column prop="ru" label="入职日期"></el-table-column>
           <el-table-column prop="chao" label="操作">
-            <span class="xiugai"><span class="el-icon-edit"></span></span>
-            <span class="shanchu"><span class="el-icon-delete-solid"></span></span>
+            <span class="xiugai" @click="xiugai()"><span class="el-icon-edit"></span></span>
+            <span class="shanchu"><el-button type="text" @click="open" class="el-icon-delete-solid"></el-button></span>
           </el-table-column>
         </el-table>
         <div class="fengye">
@@ -97,6 +97,7 @@
 export default {
   data() {
     return {
+      tab:0,
       options: [
         {
           value: "选项1",
@@ -241,14 +242,33 @@ export default {
       })
     },
     chakan(){
-        this.$router.push({
-          path:'/yuancha'
-        })
+      this.$router.push({
+        path:'/yuancha'
+      })
+    },
+    xiugai(){
+      this.$router.push({
+        path:'/yuangai'
+      })
+    },
+      open() {
+        this.$alert('确定要删除', '是否删除', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
       }
   }
 };
 </script>
 <style scoped>
+.one{
+  color: rgb(30, 159, 255);
+}
 .book {
   margin-top: 30px;
 }
