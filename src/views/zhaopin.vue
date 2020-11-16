@@ -278,7 +278,7 @@ export default {
     },
     chakan3() {
       this.$router.push({
-        path: "/zhuanzhengan"
+        path: "/zhuanzhengkan"
       });
     },
     chakan4() {
@@ -302,7 +302,7 @@ export default {
         });
       } else if (this.tab == 2) {
         this.$router.push({
-          path: "/zhuanzhenzen"
+          path: "/zhuanzhengzen"
         });
       } else if (this.tab == 3) {
         this.$router.push({
@@ -419,7 +419,7 @@ export default {
 }
 .fengye {
   position: absolute;
-  top: 250px;
+  top: 270px;
   left: 304px;
   border: 1px solid rgb(226, 226, 226);
   border-radius: 2px;

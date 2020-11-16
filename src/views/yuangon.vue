@@ -72,8 +72,8 @@
         </div>
       </div>
       <div class="you">
-        <el-table :data="tableData" border>
-          <el-table-column @click="chakan()" prop="date" label="姓名" width="180"></el-table-column>
+        <el-table :data="tableData" stripe @row-click="rowClick" border>
+          <el-table-column prop="date" label="姓名" width="180"></el-table-column>
           <el-table-column prop="name" label="性别" width="180"></el-table-column>
           <el-table-column prop="address" label="工号"></el-table-column>
           <el-table-column prop="con" label="从属于"></el-table-column>
@@ -231,6 +231,11 @@ export default {
     };
   },
   methods: {
+    rowClick(row,column,event) {
+      this.$router.push({
+        path:'/yuancha'
+      })
+    },
     xinzen(){
       this.$router.push({
         path:'/yuanzen'

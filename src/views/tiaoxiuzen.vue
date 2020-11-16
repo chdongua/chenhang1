@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>转正申请单</span>
+        <span>调休申请单</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
@@ -20,11 +20,13 @@
               <el-form-item label="*主题">
                 <el-input v-model="form.name"></el-input>
               </el-form-item>
-              <el-form-item label="步骤:     主管审批     责任人: 王娜,      参与人:" label-width="325px"></el-form-item>
+              <el-form-item label="步骤:" label-width="130px">
+                  <span>   填单     责任人: 王刚,      参与人:</span>
+              </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="优先级">
                 <el-radio-group v-model="form.resource">
                   <el-radio label="低"></el-radio>
@@ -39,26 +41,26 @@
           </div>
         </div>
         <p class="fen">
-          <span>基本信息</span>
+          <span>申请信息</span>
         </p>
         <div class="liantiao1">
           <div class="zuo">
             <el-form ref="form" :model="form" label-width="130px">
               <el-form-item label="申请人">
-                <el-input v-model="form.name1"></el-input>
+                <el-input></el-input>
               </el-form-item>
               <el-form-item label="申请时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
-              <el-form-item label="希望到岗日期">
+              <el-form-item label="请休假开始时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="所属部门">
-              <el-select v-model="form.region" class="width" placeholder="销售部">
+              <el-select v-model="form.region" class="width" placeholder="">
                 <el-option label="总经办" value="shanghai"></el-option>
                 <el-option label="人事部" value="beijing"></el-option>
                 <el-option label="财务部"></el-option>
@@ -66,37 +68,29 @@
                 <el-option label="技术部"></el-option>
               </el-select>
             </el-form-item>
-              <el-form-item label="需求岗位">
-                <el-input></el-input>
-              </el-form-item>
-              <el-form-item label="需求人数">
-                <el-input></el-input>
+              <el-form-item label="共计时长">
+              <el-input style="width:140px"></el-input>天
+              <el-input style="width:140px"></el-input>时
+            </el-form-item>
+              <el-form-item label="请休假结束时间">
+                <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
             </el-form>
           </div>
         </div>
-        <div class="bian">
-          <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期工作内容">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="试用期工作成绩">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-          </el-form>
-        </div>
          <div class="bian">
           <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期存在的问题">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
+            
+            <el-form-item label="请休假类别">
+                <el-checkbox v-model="checked">事假</el-checkbox>
+                <el-checkbox v-model="checked">病假</el-checkbox>
+                <el-checkbox v-model="checked">年假</el-checkbox>
+                <el-checkbox v-model="checked">婚假</el-checkbox>
+                <el-checkbox v-model="checked">产假</el-checkbox>
+                <el-checkbox v-model="checked">丧假</el-checkbox>
+                <el-checkbox v-model="checked">其他</el-checkbox>
             </el-form-item>
-            <el-form-item label="问题的改进设想">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="主管评语">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="领导评语">
+            <el-form-item label="请休假事由">
               <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
             </el-form-item>
           </el-form>
@@ -133,8 +127,8 @@ export default {
   data() {
     return {
       form: {
-        name: "招聘申请-刘峰-1000165",
-        name1: "刘峰",
+        name: "请休假申请-王刚-1001556",
+        name1: "王刚",
         region: "",
         date1: "",
         date2: "",
@@ -151,18 +145,21 @@ export default {
     },
     fanhui() {
       this.$router.push({
-        path: "/zhaopin"
+        path: "/chuchai"
       });
     },
     shuaxin() {
       this.$router.push({
-        path: "/zhaozen"
+        path: "/qingxiuzen"
       });
     }
   }
 };
 </script>
 <style scoped>
+.you>>>.el-select>.el-input{
+    width: 390px;
+}
 .chuli{
     position: relative;
     float: none;
@@ -232,7 +229,7 @@ export default {
 }
 .xinzen-yi {
   cursor: pointer;
-  margin-left: 860px;
+  margin-left: 840px;
   border-radius: 2px;
   border: 1px solid rgb(201, 201, 201);
   padding: 5px;

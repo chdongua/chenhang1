@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>转正申请单</span>
+        <span>出差申请单</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
@@ -20,11 +20,11 @@
               <el-form-item label="*主题">
                 <el-input v-model="form.name"></el-input>
               </el-form-item>
-              <el-form-item label="步骤:     主管审批     责任人: 王娜,      参与人:" label-width="325px"></el-form-item>
+              <el-form-item label="    领导审批     责任人: 王娜,      参与人:" label-width="325px"></el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="优先级">
                 <el-radio-group v-model="form.resource">
                   <el-radio label="低"></el-radio>
@@ -45,7 +45,7 @@
           <div class="zuo">
             <el-form ref="form" :model="form" label-width="130px">
               <el-form-item label="申请人">
-                <el-input v-model="form.name1"></el-input>
+                <el-input></el-input>
               </el-form-item>
               <el-form-item label="申请时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
@@ -56,7 +56,7 @@
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="所属部门">
               <el-select v-model="form.region" class="width" placeholder="销售部">
                 <el-option label="总经办" value="shanghai"></el-option>
@@ -66,39 +66,39 @@
                 <el-option label="技术部"></el-option>
               </el-select>
             </el-form-item>
-              <el-form-item label="需求岗位">
+              <el-form-item label="目的地">
                 <el-input></el-input>
               </el-form-item>
-              <el-form-item label="需求人数">
-                <el-input></el-input>
+              <el-form-item label="出差结束时间">
+                <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
             </el-form>
           </div>
         </div>
-        <div class="bian">
-          <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期工作内容">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="试用期工作成绩">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-          </el-form>
-        </div>
          <div class="bian">
           <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期存在的问题">
+            <el-form-item label="出差事由">
               <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
             </el-form-item>
-            <el-form-item label="问题的改进设想">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="主管评语">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
+            <el-form-item label="交通工具">
+                <el-checkbox v-model="checked">汽车</el-checkbox>
+                <el-checkbox v-model="checked">火车</el-checkbox>
+                <el-checkbox v-model="checked">飞机</el-checkbox>
+                <el-checkbox v-model="checked">轮船</el-checkbox>
+                <el-checkbox v-model="checked">汽车</el-checkbox>
+                <el-checkbox v-model="checked">私家车</el-checkbox>
+                <el-checkbox v-model="checked">其他</el-checkbox>
             </el-form-item>
             <el-form-item label="领导评语">
               <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
             </el-form-item>
+            <el-form-item label="出差结果">
+                <el-radio-group v-model="form.resource">
+                  <el-radio label="目标达成"></el-radio>
+                  <el-radio label="目标基本达成"></el-radio>
+                  <el-radio label="目标未达成"></el-radio>
+                </el-radio-group>
+              </el-form-item>
           </el-form>
         </div>
         <div class="shegao3"></div>
@@ -133,8 +133,8 @@ export default {
   data() {
     return {
       form: {
-        name: "招聘申请-刘峰-1000165",
-        name1: "刘峰",
+        name: "招聘申请-李浩-1000165",
+        name1: "李浩",
         region: "",
         date1: "",
         date2: "",
@@ -151,12 +151,12 @@ export default {
     },
     fanhui() {
       this.$router.push({
-        path: "/zhaopin"
+        path: "/chuchai"
       });
     },
     shuaxin() {
       this.$router.push({
-        path: "/zhaozen"
+        path: "/chuzen"
       });
     }
   }

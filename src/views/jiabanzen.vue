@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>转正申请单</span>
+        <span>加班申请单</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
@@ -20,11 +20,13 @@
               <el-form-item label="*主题">
                 <el-input v-model="form.name"></el-input>
               </el-form-item>
-              <el-form-item label="步骤:     主管审批     责任人: 王娜,      参与人:" label-width="325px"></el-form-item>
+              <el-form-item label="步骤:" label-width="130px">
+                  <span>填单人知悉     责任人: 季道晓,      参与人:</span>
+              </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="优先级">
                 <el-radio-group v-model="form.resource">
                   <el-radio label="低"></el-radio>
@@ -45,7 +47,7 @@
           <div class="zuo">
             <el-form ref="form" :model="form" label-width="130px">
               <el-form-item label="申请人">
-                <el-input v-model="form.name1"></el-input>
+                <el-input></el-input>
               </el-form-item>
               <el-form-item label="申请时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
@@ -56,9 +58,9 @@
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="80px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="所属部门">
-              <el-select v-model="form.region" class="width" placeholder="销售部">
+              <el-select v-model="form.region" class="width" placeholder="">
                 <el-option label="总经办" value="shanghai"></el-option>
                 <el-option label="人事部" value="beijing"></el-option>
                 <el-option label="财务部"></el-option>
@@ -66,37 +68,19 @@
                 <el-option label="技术部"></el-option>
               </el-select>
             </el-form-item>
-              <el-form-item label="需求岗位">
-                <el-input></el-input>
-              </el-form-item>
-              <el-form-item label="需求人数">
-                <el-input></el-input>
+               <el-form-item label="共计时长">
+              <el-input style="width:140px"></el-input>天
+              <el-input style="width:140px"></el-input>时
+            </el-form-item>
+              <el-form-item label="返回时间">
+                <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
             </el-form>
           </div>
         </div>
-        <div class="bian">
-          <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期工作内容">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="试用期工作成绩">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-          </el-form>
-        </div>
          <div class="bian">
           <el-form ref="form" :model="form" label-width="130px">
-            <el-form-item label="试用期存在的问题">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="问题的改进设想">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="主管评语">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="领导评语">
+            <el-form-item label="加班事由">
               <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
             </el-form-item>
           </el-form>
@@ -133,8 +117,8 @@ export default {
   data() {
     return {
       form: {
-        name: "招聘申请-刘峰-1000165",
-        name1: "刘峰",
+        name: "加班申请-李华林-1000565",
+        name1: "李浩",
         region: "",
         date1: "",
         date2: "",
@@ -151,18 +135,21 @@ export default {
     },
     fanhui() {
       this.$router.push({
-        path: "/zhaopin"
+        path: "/chuchai"
       });
     },
     shuaxin() {
       this.$router.push({
-        path: "/zhaozen"
+        path: "/jiabanzen"
       });
     }
   }
 };
 </script>
 <style scoped>
+.you>>>.el-select>.el-input{
+    width: 390px;
+}
 .chuli{
     position: relative;
     float: none;

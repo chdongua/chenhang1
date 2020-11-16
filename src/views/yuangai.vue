@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>新增员工</span>
+        <span>编辑员工</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
