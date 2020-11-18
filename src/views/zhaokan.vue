@@ -49,30 +49,6 @@
               <el-form-item label="希望到岗日期">
                 <span>2016/4/30</span>
               </el-form-item>
-              <el-form-item label="招聘原因说明">
-                <span>新产品即将投入生产，当前生产力不足以满足新产品大规模生产需求</span>
-              </el-form-item>
-              <el-form-item label="工作内容及职责">
-                <span>负责新产品的流水线工作；</span>
-              </el-form-item>
-              <el-form-item label="外语要求">
-                <span>无</span>
-              </el-form-item>
-              <el-form-item label="年龄">
-                <span>28左右</span>
-              </el-form-item>
-              <el-form-item label="学历">
-                <span>大专</span>
-              </el-form-item>
-              <el-form-item label="工作经验">
-                <p>1、一年以上相关工作经验；</p>
-                <p>2、态度诚恳，能够接受加班；</p>
-              </el-form-item>
-              <el-form-item label="行业背景">
-                <span>机械制造业</span>
-              </el-form-item>
-              <el-form-item label="其他要求"></el-form-item>
-              <el-form-item label="附件"></el-form-item>
             </el-form>
           </div>
           <div class="you">
@@ -91,7 +67,31 @@
         </div>
         <div class="din">
           <el-form ref="form" :model="form" label-width="110px">
-            <el-form-item label="工作地点">
+             <el-form-item label="招聘原因说明">
+                <span>新产品即将投入生产，当前生产力不足以满足新产品大规模生产需求</span>
+              </el-form-item>
+              <el-form-item label="工作内容及职责">
+                <span>负责新产品的流水线工作；</span>
+              </el-form-item>
+          </el-form>
+        </div>
+        <div class="liantiao1">
+          <div class="zuo">
+            <el-form ref="form" :model="form" label-width="110px">
+              <el-form-item label="外语要求">
+                <span>无</span>
+              </el-form-item>
+              <el-form-item label="年龄">
+                <span>28左右</span>
+              </el-form-item>
+              <el-form-item label="学历">
+                <span>大专</span>
+              </el-form-item>
+            </el-form>
+          </div>
+          <div class="you">
+            <el-form ref="form" :model="form" label-width="80px">
+              <el-form-item label="工作地点">
               <span>北京</span>
             </el-form-item>
             <el-form-item label="性别">
@@ -100,6 +100,20 @@
             <el-form-item label="专业">
               <span>机械制造</span>
             </el-form-item>
+            </el-form>
+          </div>
+        </div>
+        <div class="din">
+          <el-form ref="form" :model="form" label-width="110px">
+            <el-form-item label="工作经验">
+                <p>1、一年以上相关工作经验；</p>
+                <p>2、态度诚恳，能够接受加班；</p>
+              </el-form-item>
+              <el-form-item label="行业背景">
+                <span>机械制造业</span>
+              </el-form-item>
+              <el-form-item label="其他要求"></el-form-item>
+              <el-form-item label="附件"></el-form-item>
           </el-form>
         </div>
         <p class="fen">
@@ -172,10 +186,11 @@ export default {
 };
 </script>
 <style scoped>
-.din{
-    position: absolute;
-    top: 490px;
-    right: 483px;
+#app{
+  width: 1345px;
+  height:650px;
+  overflow-x: scroll;
+  word-break: break-all;
 }
 .chuli {
   position: relative;
@@ -231,7 +246,7 @@ export default {
   height: 100px;
 }
 .liantiao1 {
-  height: 650px;
+  height: 158px;
 }
 #app {
   background-color: rgb(241, 241, 241);

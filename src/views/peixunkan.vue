@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>岗位调动申请单</span>
+        <span>员工培训安排单详情</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
@@ -16,108 +16,78 @@
       <div>
         <div class="liantiao">
           <div class="zuo">
-            <el-form ref="form" :model="form" label-width="110px">
+            <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="*主题">
-                <el-input v-model="form.name"></el-input>
+                <span>劳动合同登记-王萍-1000212</span>
               </el-form-item>
-              <el-form-item label="步骤:" label-width="110px">
-                <span>  结束     责任人: ,      参与人:</span>
+              <el-form-item label="步骤:" label-width="100px">
+                <span>培训通知     责任人: 李萌,      参与人:李萌,沈华,沈涛辉,张旭,张瑶瑶</span>
               </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="100px">
+            <el-form ref="form" :model="form" label-width="110px">
               <el-form-item label="优先级">
-                <el-radio-group v-model="form.resource">
-                  <el-radio label="低"></el-radio>
-                  <el-radio label="中"></el-radio>
-                  <el-radio label="高"></el-radio>
-                </el-radio-group>
+                <span>中</span>
               </el-form-item>
-              <el-form-item label="结束时间">
-                <el-input placeholder="yyyy-MM-dd"></el-input>
-              </el-form-item>
+              <el-form-item label="结束时间">2016/5/8</el-form-item>
             </el-form>
           </div>
         </div>
         <p class="fen">
-          <span>基本信息</span>
+          <span>申请信息</span>
         </p>
         <div class="liantiao1">
           <div class="zuo">
             <el-form ref="form" :model="form" label-width="110px">
-              <el-form-item label="申请人">
-                <el-input v-model="form.name1"></el-input>
+              <el-form-item label="*申请人">
+                <span>李萌</span>
               </el-form-item>
-              <el-form-item label="由（现部门）">
-                <el-select v-model="form.region" class="width" placeholder="销售部">
-                  <el-option label="总经办" value="shanghai"></el-option>
-                  <el-option label="人事部" value="beijing"></el-option>
-                  <el-option label="财务部"></el-option>
-                  <el-option label="销售部"></el-option>
-                  <el-option label="技术部"></el-option>
-                </el-select>
+              <el-form-item label="*合同类型">
+                <span>无固定期限合同</span>
               </el-form-item>
-              <el-form-item label="至（新部门）">
-                <el-select v-model="form.region" class="width" placeholder="销售部">
-                  <el-option label="总经办" value="shanghai"></el-option>
-                  <el-option label="人事部" value="beijing"></el-option>
-                  <el-option label="财务部"></el-option>
-                  <el-option label="销售部"></el-option>
-                  <el-option label="技术部"></el-option>
-                </el-select>
+              <el-form-item label="*申请日期">
+                <span>2018/4/9</span>
+              </el-form-item>
+              <el-form-item label="培训课程">
+                <span>ColloaV8新版本系统培训</span>
+              </el-form-item>
+              <el-form-item label="*开始时间">
+                <span>2018/5/8 09:00:00</span>
+              </el-form-item>
+              <el-form-item label="培训类型">
+                <span>技术培训</span>
+              </el-form-item>
+              <el-form-item label="*受培训人员">
+                <span>李萌,沈华,沈涛辉,张旭,张瑶瑶,季道晓,</span>
+              </el-form-item>
+              <el-form-item label="*培训日程">
+                <p>地点：二号会议室</p>
+                <p>9:00~10:30 新版本技术培训和业务场景解析</p>
+                <p>10:30~11:00 答疑解惑</p>
+              </el-form-item>
+              <el-form-item label="培训总结">
+                <span></span>
+              </el-form-item>
+              <el-form-item label="附件">
+                <span></span>
               </el-form-item>
             </el-form>
           </div>
           <div class="you">
             <el-form ref="form" :model="form" label-width="110px">
-              <el-form-item label="入职日期">
-                <el-input placeholder="yyyy-MM-dd"></el-input>
+              <el-form-item label="*所属部门">
+                <span>销售部</span>
               </el-form-item>
-              <el-form-item label="由（现岗位）">
-                <el-input></el-input>
+              <el-form-item label="*培训讲师">
+                <span>许经理</span>
               </el-form-item>
-              <el-form-item label="至（新岗位）">
-                <el-input></el-input>
+              <el-form-item label="结束时间">
+                <span>2018/5/8 11:00:00</span>
               </el-form-item>
             </el-form>
           </div>
         </div>
-        <div class="bian">
-          <el-form ref="form" :model="form" label-width="110px">
-            <el-form-item label="调动原因">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="调动类型">
-                <el-radio-group v-model="form.resource">
-                  <el-radio label="正式调动"></el-radio>
-                  <el-radio label="临时借调"></el-radio>
-                  <el-radio label="晋升"></el-radio>
-                  <el-radio label="降职"></el-radio>
-                </el-radio-group>
-              </el-form-item>
-              <el-form-item label="现部门主管意见">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="新部门主管意见">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-form-item label="调动原因">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
-          </el-form>
-        </div>
-        
-        <div class="shegao3"></div>
-        <el-form ref="form" :model="form" label-width="110px">
-          <el-form-item label="入职处理">
-                <el-checkbox v-model="checked">人事手续已经办理</el-checkbox>
-                <el-checkbox v-model="checked">信息系统已经开通（请人事专员或系统管理员在本系统的【员工管理】模块中新增员工信息）</el-checkbox>
-            </el-form-item>
-          <el-form-item label="附件">
-            <el-input></el-input>
-          </el-form-item>
-        </el-form>
         <p class="fen">
           <span>处理流程日志</span>
         </p>
@@ -127,6 +97,7 @@
               <strong>【处理过程】</strong>
               <a href="#">查看流程图 ></a>
             </p>
+            <div>王萍2016/4/8 10:45<br/><strong>【提交主管审批】</strong></div>
           </div>
           <div class="q2">
             <p>
@@ -142,8 +113,11 @@
         <div class="baochun">
           <el-form ref="form" :model="form" label-width="80px">
             <el-form-item>
-              <el-button class="dian" type="primary" @click="onSubmit">保存</el-button>
-              <el-button class="ji">提交主管考核</el-button>
+              <el-button class="ji">保存</el-button>              
+              <el-button class="ji">培训完成并总结</el-button>              
+              <el-button class="ji">回退修改</el-button>              
+              <el-button class="ji">打印表单</el-button>
+              <el-button class="ji">打印本页面</el-button>
               <el-button class="ji">取消</el-button>
             </el-form-item>
           </el-form>
@@ -157,8 +131,8 @@ export default {
   data() {
     return {
       form: {
-        name: "入职申请-陈莹-1000179",
-        name1: "陈莹",
+        name: "招聘申请-刘峰-1000165",
+        name1: "刘峰",
         region: "",
         date1: "",
         date2: "",
@@ -175,12 +149,12 @@ export default {
     },
     fanhui() {
       this.$router.push({
-        path: "/zhaopin"
+        path: "/laodon"
       });
     },
     shuaxin() {
       this.$router.push({
-        path: "/gangweizen"
+        path: "/peixunkan"
       });
     }
   }
@@ -192,6 +166,11 @@ export default {
   height:650px;
   overflow-x: scroll;
   word-break: break-all;
+}
+.din{
+    position: absolute;
+    top: 490px;
+    right: 483px;
 }
 .chuli {
   position: relative;
@@ -247,7 +226,7 @@ export default {
   height: 100px;
 }
 .liantiao1 {
-  height: 150px;
+  height: 560px;
 }
 #app {
   background-color: rgb(241, 241, 241);
@@ -262,7 +241,7 @@ export default {
 }
 .xinzen-yi {
   cursor: pointer;
-  margin-left: 810px;
+  margin-left: 780px;
   border-radius: 2px;
   border: 1px solid rgb(201, 201, 201);
   padding: 5px;
@@ -296,14 +275,14 @@ export default {
 }
 .zuo {
   float: left;
-  width: 500px;
+  width: 540px;
 }
 .you {
   width: 500px;
   float: right;
 }
 .width {
-  width: 390px;
+  width: 420px;
 }
 .el-form-item:nth-of-type(1) {
   margin-top: 10px;

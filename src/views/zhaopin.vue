@@ -75,6 +75,11 @@
             <td>1</td>
             <td>2016/4/30</td>
           </tr>
+          <div class="fengye">
+          <span class="el-icon-caret-left"></span>
+          <span>共有70条记录，第1/4页</span>
+          <span class="el-icon-caret-right"></span>
+        </div>
         </table>
         <table v-show="tab==1" class="table" cellspacing="0" cellpadding="0">
           <tr class="tr">
@@ -117,6 +122,11 @@
             <td>1</td>
             <td>2016/4/30</td>
           </tr>
+          <div class="fengye">
+          <span class="el-icon-caret-left"></span>
+          <span>共有70条记录，第1/4页</span>
+          <span class="el-icon-caret-right"></span>
+        </div>
         </table>
         <table v-show="tab==2" class="table" cellspacing="0" cellpadding="0">
           <tr class="tr">
@@ -159,6 +169,11 @@
             <td>2016/4/7</td>
             <td></td>
           </tr>
+          <div class="fengye">
+          <span class="el-icon-caret-left"></span>
+          <span>共有70条记录，第1/4页</span>
+          <span class="el-icon-caret-right"></span>
+        </div>
         </table>
         <table v-show="tab==3" class="table" cellspacing="0" cellpadding="0">
           <tr class="tr">
@@ -201,6 +216,11 @@
             <td>2016/4/7</td>
             <td></td>
           </tr>
+          <div class="fengye">
+          <span class="el-icon-caret-left"></span>
+          <span>共有70条记录，第1/4页</span>
+          <span class="el-icon-caret-right"></span>
+        </div>
         </table>
         <table v-show="tab==4" class="table" cellspacing="0" cellpadding="0">
           <tr class="tr">
@@ -243,12 +263,12 @@
             <td>2016/4/7</td>
             <td>2016/4/30</td>
           </tr>
-        </table>
-        <div class="fengye">
+          <div class="fengye">
           <span class="el-icon-caret-left"></span>
           <span>共有70条记录，第1/4页</span>
           <span class="el-icon-caret-right"></span>
         </div>
+        </table>
       </div>
     </div>
   </div>
@@ -318,6 +338,10 @@ export default {
 };
 </script>
 <style scoped>
+#app{
+  width: 1345px;
+  height:620px;
+}
 .book {
   margin-top: 30px;
 }
@@ -358,6 +382,10 @@ export default {
   border-radius: 4px;
   border: 1px solid rgb(223, 223, 223);
   margin-left: 5px;
+  float: left;
+}
+.you{
+  float: right;
 }
 .fen {
   padding: 5px 10px;
@@ -383,9 +411,6 @@ export default {
   color: rgb(30, 159, 255);
 }
 .table {
-  position: absolute;
-  right: 10px;
-  top: 86px;
   font-size: 14px;
 }
 .table tr td {
@@ -418,13 +443,11 @@ export default {
   color: #000;
 }
 .fengye {
-  position: absolute;
-  top: 270px;
-  left: 304px;
   border: 1px solid rgb(226, 226, 226);
   border-radius: 2px;
   font-size: 12px;
   width: 240px;
+  margin-top: 5px;
 }
 .fengye span:nth-of-type(1) {
   padding: 8px 10px;

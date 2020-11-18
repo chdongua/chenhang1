@@ -271,6 +271,10 @@ export default {
 };
 </script>
 <style scoped>
+#app{
+  width: 1345px;
+  height:620px;
+}
 .one{
   color: rgb(30, 159, 255);
 }

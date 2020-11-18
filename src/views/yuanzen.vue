@@ -204,13 +204,13 @@ export default {
 };
 </script>
 <style scoped>
-#app {
-  background-color: rgb(241, 241, 241);
-  padding: 0 80px;
-}
 .zhuye {
   background-color: rgb(255, 255, 255);
-  padding: 20px 40px;
+  padding: 20px 40px 0px 40px;
+  width: 1345px;
+  height:620px;
+  overflow-x: scroll;
+  word-break: break-all;
 }
 .xinzen {
   font-size: 20px;

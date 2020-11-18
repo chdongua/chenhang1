@@ -261,7 +261,8 @@ export default {
     #app{
         background-color: rgb(241,241,241);
         padding: 0 70px;
-        
+  width: 1345px;
+  height:650px;
     }
     .baise{
         background-color: #fff;

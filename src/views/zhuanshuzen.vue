@@ -2,7 +2,7 @@
   <div id="app">
     <div class="zhuye">
       <p class="xinzen">
-        <span>请休假申请单</span>
+        <span>员工专项福利申请</span>
         <span class="xinzen-yi" @click="fanhui()">
           <span class="el-icon-arrow-left"></span>返回
         </span>
@@ -16,17 +16,17 @@
       <div>
         <div class="liantiao">
           <div class="zuo">
-            <el-form ref="form" :model="form" label-width="130px">
+            <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="*主题">
                 <el-input v-model="form.name"></el-input>
               </el-form-item>
-              <el-form-item label="步骤:" label-width="130px">
-                  <span>   填单     责任人: 王刚,      参与人:</span>
+              <el-form-item label="步骤:" label-width="100px">
+                  <span>结束      责任人:       参与人:</span>
               </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="110px">
+            <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="优先级">
                 <el-radio-group v-model="form.resource">
                   <el-radio label="低"></el-radio>
@@ -45,22 +45,19 @@
         </p>
         <div class="liantiao1">
           <div class="zuo">
-            <el-form ref="form" :model="form" label-width="130px">
+            <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="申请人">
                 <el-input></el-input>
               </el-form-item>
               <el-form-item label="申请时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
-              <el-form-item label="请休假开始时间">
-                <el-input placeholder="yyyy-MM-dd"></el-input>
-              </el-form-item>
             </el-form>
           </div>
           <div class="you">
-            <el-form ref="form" :model="form" label-width="110px">
+            <el-form ref="form" :model="form" label-width="100px">
               <el-form-item label="所属部门">
-              <el-select v-model="form.region" class="width" placeholder="">
+              <el-select v-model="form.region" class="width" placeholder="销售部">
                 <el-option label="总经办" value="shanghai"></el-option>
                 <el-option label="人事部" value="beijing"></el-option>
                 <el-option label="财务部"></el-option>
@@ -68,35 +65,51 @@
                 <el-option label="技术部"></el-option>
               </el-select>
             </el-form-item>
-              <el-form-item label="共计时长">
-              <el-input style="width:140px"></el-input>天
-              <el-input style="width:140px"></el-input>时
-            </el-form-item>
-              <el-form-item label="请休假结束时间">
+              <el-form-item label="实施时间">
                 <el-input placeholder="yyyy-MM-dd"></el-input>
               </el-form-item>
             </el-form>
           </div>
         </div>
          <div class="bian">
-          <el-form ref="form" :model="form" label-width="130px">
-            
-            <el-form-item label="请休假类别">
-                <el-checkbox v-model="checked">事假</el-checkbox>
-                <el-checkbox v-model="checked">病假</el-checkbox>
-                <el-checkbox v-model="checked">年假</el-checkbox>
-                <el-checkbox v-model="checked">婚假</el-checkbox>
-                <el-checkbox v-model="checked">产假</el-checkbox>
-                <el-checkbox v-model="checked">丧假</el-checkbox>
-                <el-checkbox v-model="checked">其他</el-checkbox>
-            </el-form-item>
-            <el-form-item label="请休假事由">
-              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
-            </el-form-item>
+          <el-form ref="form" :model="form" label-width="100px">
+              <el-form-item label="涉及员工">
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item label="专项福利">
+                <el-radio-group v-model="form.resource">
+                  <el-radio label="节日福利"></el-radio>
+                  <el-radio label="节日慰问"></el-radio>
+                  <el-radio label="员工结婚祝贺"></el-radio>
+                  <el-radio label="小孩诞生祝贺"></el-radio>
+                  <el-radio label="员工生病探望"></el-radio>
+                  <el-radio label="家庭特殊情况慰问"></el-radio>
+                  <el-radio label="其它"></el-radio>
+                </el-radio-group>
+              </el-form-item>
           </el-form>
         </div>
+        <div class="liantiao2">
+          <div class="zuo">
+            <el-form ref="form" :model="form" label-width="100px">
+              <el-form-item label="实施方式">
+                <el-input></el-input>
+              </el-form-item>
+            </el-form>
+          </div>
+          <div class="you">
+            <el-form ref="form" :model="form" label-width="100px">
+              <el-form-item label="预估金额">
+                <el-input></el-input>
+              </el-form-item>
+            </el-form>
+          </div>
+        </div>
         <div class="shegao3"></div>
-        <el-form ref="form" :model="form" label-width="130px">
+        <el-form ref="form" :model="form" label-width="100px">
+            <el-form-item label="实施结果">
+              <el-input type="textarea" v-model="form.desc" placeholder="请输入内容"></el-input>
+            </el-form-item>
           <el-form-item label="附件">
             <el-input></el-input>
           </el-form-item>
@@ -127,8 +140,8 @@ export default {
   data() {
     return {
       form: {
-        name: "请休假申请-王刚-1001556",
-        name1: "王刚",
+        name: "员工专项福利-李萌-1000939",
+        name1: "李浩",
         region: "",
         date1: "",
         date2: "",
@@ -145,12 +158,12 @@ export default {
     },
     fanhui() {
       this.$router.push({
-        path: "/chuchai"
+        path: "/laodon"
       });
     },
     shuaxin() {
       this.$router.push({
-        path: "/qingxiuzen"
+        path: "/shengrzen"
       });
     }
   }
@@ -220,7 +233,10 @@ export default {
   height: 100px;
 }
 .liantiao1 {
-  height: 150px;
+  height: 100px;
+}
+.liantiao2 {
+  height: 180px;
 }
 #app {
   background-color: rgb(241, 241, 241);
@@ -235,7 +251,7 @@ export default {
 }
 .xinzen-yi {
   cursor: pointer;
-  margin-left: 840px;
+  margin-left: 800px;
   border-radius: 2px;
   border: 1px solid rgb(201, 201, 201);
   padding: 5px;

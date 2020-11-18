@@ -42,7 +42,6 @@
         <div class="gao"></div>
       </div>
       <div class="you">
-          
         <table v-show="tab==0" class="table" cellspacing="0" cellpadding="0">
           <tr class="tr">
             <td>主题</td>
@@ -702,6 +701,12 @@ export default {
 };
 </script>
 <style scoped>
+#app{
+  width: 1345px;
+  height:650px;
+  overflow-x: scroll;
+  word-break: break-all;
+}
 .book {
   margin-top: 30px;
 }
@@ -743,7 +748,7 @@ export default {
 }
 .select {
   border-radius: 4px;
-  margin-left: 150px;
+  margin-left: 130px;
 }
 .input {
   border-radius: 4px;
@@ -754,10 +759,17 @@ export default {
   margin-top: 5px;
 }
 .zuo {
-  width: 260px;
+  width: 240px;
+  height: 100%;
   border-radius: 4px;
   border: 1px solid rgb(223, 223, 223);
+  float: left;
   margin-left: 5px;
+  margin-top: 5px;
+}
+.you{
+  float: right;
+  margin-top:5px; 
 }
 .fen {
   padding: 5px 10px;
@@ -783,9 +795,6 @@ export default {
   color: rgb(30, 159, 255);
 }
 .table {
-  position: absolute;
-  right: 10px;
-  top: 76px;
   font-size: 14px;
 }
 .table tr td {

@@ -159,6 +159,12 @@ export default {
 };
 </script>
 <style scoped>
+#app{
+  width: 1345px;
+  height:650px;
+  overflow-x: scroll;
+  word-break: break-all;
+}
 .you>>>.el-select>.el-input{
     width: 390px;
 }

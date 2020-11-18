@@ -183,6 +183,12 @@ export default {
 };
 </script>
 <style scoped>
+#app{
+  width: 1345px;
+  height:650px;
+  overflow-x: scroll;
+  word-break: break-all;
+}
 .chuli {
   position: relative;
   float: none;
